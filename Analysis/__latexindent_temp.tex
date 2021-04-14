@@ -1,0 +1,137 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{verbatim}
+\usepackage{amsthm}
+\renewcommand{\baselinestretch}{1.5}
+\newcommand\F{\mathcal{F}}
+\newcommand\lb{\left\lbrace}
+\newcommand\rb{\right\rbrace}
+\newcommand\w{\omega}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\st{\text{ such that }}
+\newcommand\sumOfSeries{\sum_{n = 0}^{\infty}}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{note}{Note}
+\newtheorem{proposition}{Proposition}
+\parindent 0ex
+\begin{document}
+\title{Mathematics Year I, Analysis I Term 1 \\ Theorems, propositions. } 
+\date{\today}
+\author{Szymon Kubica} 
+\maketitle
+
+\section{Order Axioms}
+    \[ 1. \forall x \in \Q \text{ exactly one of the following holds: } \\ x > 0 \text{ or } x = 0 \text{ or } -x > 0 \text{ (Trichotomy axiom)} \]
+    \[ 2. \forall x \in \Q \exists n \in \N \text{ such that } n > x \text{ (Archimedean axiom)}\]
+\section{Decimals}
+We define an eventually periodic decimal $ a_0.a_1...a_i\overline{a_{i + 1}a_{i + 2}...a_j}$ for $a_0 \in \N$, $a_{i > 0} \in \{0, 1, ..., 9\}$
+as the rational number
+\[ a_0 + \frac{a_1}{10} + \frac{a_2}{100} + ... + \frac{a_i}{10^{i}} + \left(\frac{a_{i + 1}a_{i + 2}...a_j}{10^{j}}\right) \left(\frac{1}{1 - 10^{i - j}}\right)\]
+
+\begin{theorem}
+    Any $ x \in \Q $ is equal to an eventually periodic decimal expansion: \\ $ x =  a_0.a_1...a_i\overline{a_{i + 1}a_{i + 2}...a_j}$ for $a_0 \in \N$, $a_{i > 0} \in \{0, 1, ..., 9\}. $
+\end{theorem}
+
+\section{The Completeness Axiom}
+
+\begin{definition}
+        Suppose $\emptyset \neq S \subset \R $ is bounded above. We define $ x \in \R $ to be the \textbf{supremum} of $S$ iff:
+        \begin{itemize}
+            \item $ X $ is an upper bound for $ S $ (i.e. $ x \geq s \forall s \in S $), 
+            \item $ x \leq y $ for any $ y $ which is an upper bound for S ($ y \geq s \, \forall s \in S \implies x \leq y $).
+        \end{itemize}
+
+\end{definition}
+
+\section{Dedekind cuts}
+
+\begin{definition}
+    A nonempty subset $ S \in \Q $ is a Dedekind cut if it satisfies the following properties: 
+    \begin{itemize}
+        \item If $ s \in S $ and $ s > t \in \Q $ then $ t \in S $ (S is a semi-infinite interval to the left).
+        \item $ S $ is bounded above but has no maximum.
+    \end{itemize}
+\end{definition}
+
+\section{Sequences}
+
+\begin{definition}
+    $ a_n \to a $ as $ n \to \infty $ iff $ \forall \epsilon > 0 \; \exists N \in \N $ such that $\forall n \geq N$, $|a_n - a| < \epsilon$.
+\end{definition}
+
+\begin{note}
+    It is important to remember that $ N $ can depend on $ \epsilon $.
+\end{note}
+
+\begin{definition}
+    A sequence $ a_n $ converges iff $\exists a \in \R \text{ such that } \forall \: \epsilon \; \exists \: N \in \N \text{ such that } \forall n \geq N \; |a_n - a| < \epsilon$.
+\end{definition}
+
+\begin{definition}
+    A sequence $ a_n $ diverges iff $\forall a \in \R \; \exists \: \epsilon > 0 \text{ s.t. } \; \forall \: N \in \N \; \exists n \geq N \text{ such that } |a_n - a| \geq \epsilon$.
+\end{definition}
+
+\begin{theorem}
+    Limits are unique. $ a_n \to a \land a_n \to b \implies a = b$.
+\end{theorem}
+
+\begin{theorem}
+    If $(a_n)$ is bounded above and monotonically increasing then $ a_n $ converges to \\ $ a := sup\{a_i | i \in \N \} $. We write $ a_n \uparrow a $. 
+\end{theorem}
+
+\begin{definition}
+    $ (a_n)_{n \geq 1} $ is called a Cauchy sequence iff: 
+    \[ \forall \: \epsilon > 0 \; \exists \; N \in \N \st \forall \: n, m \geq N \; |a_n - a_m| < \epsilon. \]
+\end{definition}
+
+\begin{theorem}
+    If $ (a_n) $ is a Cauchy sequence of real numbers then $ a_n $ converges.
+\end{theorem}
+
+\section{Subsequences}
+
+\begin{theorem}[Bolzano-Weierstrass]
+    If $ (a_n) $ is a bounded sequence of real numbers then it has a convergent subsequence.
+\end{theorem}
+
+\begin{definition}
+    We say $ a_n \to +\infty $ if and only if 
+    \[ \forall R > 0 \; \exists N \in \N \st \forall \; n \geq N a_n > R\] 
+\end{definition}
+
+\section{Series}
+
+\begin{definition}
+    The sequence of partial sums $ (s_n) $ of a series is given by:
+    \[ s_n = \sum_{i=1}^n a_i.\]
+\end{definition}
+
+\begin{definition}
+    We say that the series $ \sum a_n $ converges to $ A \in \R $ if and only if the sequence of partial sums converges to $ A $:
+    \[ \sum_{n = 1}^{\infty} a_n = A \iff s_n \to A \]
+\end{definition}
+
+\begin{theorem}
+    $ \sumOfSeries a_n $ is convergent $ \implies a_n \to 0$.
+\end{theorem}
+
+\begin{proposition}
+    Suppose $a_n \geq 0 \; \forall n $ (i.e. the sequence of partial sums is monotonically increasing), then the following facts are true:
+    \begin{enumerate}
+        \item $ \sumOfSeries a_n $ converges iff. $(s_n) $
+    \end{enumerate}
+\end{proposition}
+\end{document}

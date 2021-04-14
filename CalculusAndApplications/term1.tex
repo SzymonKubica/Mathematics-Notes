@@ -321,6 +321,141 @@ We can summarize the two theorems above by stating that whenever we are within t
     Where c is a number between $ x_0 $ and $ x $.
 \end{theorem}
 
+\begin{note}
+    The following Taylor's expansions are common and important to remember.
 
+    The Maclaurin series of $ e^x $
+    \[ e^x = \sum_{i = 0}^n \frac{x^n}{n!} + R_n\]
+    Where the remainder term is given by (for $ c $ between $ 0 $ and $ x $)
+    \[ R_n = \frac{e^c}{(n + 1)!} x^{n + 1}.\]
+    The expansion of $ \log (1 + x) $ 
+    \[ \log(1 + x) = \sum_{i = 1}^n (-1)^{i - 1}\frac{x^i}{i} + R_{n + 1} \]
+    Where $ R_n $ is given by 
+    \[ R_n = (-1)^n \int_0^x \frac{t^n}{1 + t} \dee t\]
+\end{note}
 
+\subsubsection{Binomial Expansion}
+
+If $ |x| < 1 $ we have (for any real $ \alpha $) 
+\[ (1 + x)^\alpha = 1 + \alpha x + \frac{\alpha(\alpha - 1)}{2!}x^2 + ... = \sumOfSeries \frac{\alpha (\alpha - 1)...(\alpha - n + 1)}{n!} x^n.\]
+
+\subsection{Fourier Series}
+
+\subsubsection{Orthogonal and orthonormal function spaces}
+
+\begin{definition}
+    If $ f $, $ g $ are real valued functions that are Riemann integrable on $ [a, b] $, then we define the inner product of $ f $ and $ g $, denoted by $ (f, g) $, by
+    \[ (f, g) := \int_a^b f(x)g(x) \, \dee x\]
+    \[ \text{Note } (f, f)^\frac{1}{2} = \left(\int_a^b f^2 \dee x\right)^\frac{1}{2} := || f || \geq 0.\]
+\end{definition}
+
+\begin{definition}
+    Let $ \mathbb{S} = \{ \phi_0, \phi_1, ... \} $ be a collection fo functions that are Riemann integrable on $ [a, b] $. If 
+    \[ (\phi_n, \phi_m) = 0 \text{ whenever } m \neq n \]
+    then $ \mathbb{S} $ is an orthogonal system on $ [a, b] $. If in addition, $ || \phi_n || = 1 \; \forall \, n $, then $ \mathbb{S} $ is said to be orthonormal on $ [a, b] $.
+\end{definition}
+
+\subsection{Periodic functions and periodic extensions}
+
+\begin{definition}
+    Given a function extended periodically over a given interval, we define the value at the points of discontinuity to be 
+    \[ f(\xi) = \frac{1}{2}\left[f(\xi_+) + f(\xi_-)\right]\]
+\end{definition}
+
+\subsubsection{Trigonometric Polynomials}
+
+The general form of a trigonometric polynomial is given by 
+\[ S_n(x) = \frac{1}{2} a_0 + \sum_{k = 1}^n \left[a_k \cos(k\omega x) + b_k \sin(k\omega x)\right]\]
+
+\subsubsection{Euler's relation}
+
+The following Euler's relation is very useful
+\[ \cos (\theta) + i \sin (\theta) = e^{i\theta}.\]
+From it we can derive the definitions for sin and cos in terms of $ e $
+\[ \cos(\theta) = \frac{e^{i\theta} + e^{-i\theta}}{2}\]
+And similarly for sin
+\[ \sin(\theta) = \frac{e^{i\theta} - e^{-i\theta}}{2i}\]
+
+\subsubsection{Orthogonality of complex exponentials} 
+
+\[ \int_{-\pi}^\pi e^{inx} \dee x = \begin{cases}
+    0  & n \neq 0, \\
+    2\pi & n = 0.
+\end{cases}\]
+
+Similarly  for any integers $ m, \, n $ we have
+\[ \int_{-\pi}^\pi e^{inx}e^{-imx} \dee x = \begin{cases}
+    0  & n \neq m, \\
+    2\pi & n = m.
+\end{cases}\]
+
+\subsubsection{Complex notation for trigonometric polynomials}
+
+Using the general form of a trigonometric polynomial and expressions for sin and cos in terms of $ e $, we can derive the following complex form 
+\[ S_n(x) = \sum_{k = -n}^n \gamma_k e^{ikx}\]
+Where
+\[ \gamma_k = \begin{cases}
+    \frac{1}{2} a_0 & k = 0, \\
+    \frac{1}{2} (a_k - i b_k) & k > 0, \\
+    \frac{1}{2} (a_{|k|} + i b_{|k|}) & k < 0.
+\end{cases}\]
+
+\subsection{Fourier series}
+Given a function $ f(x) $ we want to represent it as a trigonometric polynomial
+\[ f(x) = S_N(x) = \frac{1}{2} a_0 + \sum_{n = 1}^N \left[a_n \cos(nx) + b_n \sin(nx)\right] \]
+
+We can determine the coefficients using
+\[ a_n = \frac{1}{\pi} \int_{-\pi}^\pi f(x)\cos(nx) \dee x\]
+\[ b_n = \frac{1}{\pi} \int_{-\pi}^\pi f(x)\sin(nx) \dee x\]
+
+\begin{theorem}
+    The Fourier series $ \frac{1}{2} a_0 + \sum_{n = 1}^\infty \left[a_n \cos(nx) + b_n \sin(nx)\right] $ formed by the Fourier coefficients $ a_n $ and $ b_n $ given above converges
+    to the value $ f(x) $ for any piecewise continuous function $ f(x) $ of period $ 2\pi $ which has piecewise continuous derivatives of first and second order*. At any 
+    discontinuities, the value of the function bust be defined by 
+    $ f(\xi) = \frac{1}{2}\left[f(\xi_+) + f(\xi_-)\right] $.
+\end{theorem}
+
+\begin{note}[*]
+   Actually we can relax the assumption of the second derivative. It is enough to have $ f'(x) $ be piecewise continuous, i.e. the function is piecewise smooth. If $ f(x) $ 
+   is continuous, the convergence is absolute and uniform. If it is discontinuous, we get absolute and uniform convergence everywhere except at the points of discontinuity.
+\end{note}
+
+\begin{theorem}[Riemann-Lebesgue Lemma]
+    If the function $ g(x) $ is integrable on $ [a, b] $, (e.g. it is piecewise continuous), then 
+    \[ I_\lambda = \int_a^b g(x) sin(\lambda x) \dee x\]
+    tends to zero as $ \lambda \to \infty. $ 
+\end{theorem}
+
+\subsubsection{Complex form of Fourier series}
+    We have already shown that we can express a trigonometric polynomial in terms of $ e $. 
+    We can determine the formula for the $ \gamma_n $ coefficients using the formulas obtained before.
+    \[\begin{split}
+        \gamma_n = \frac{1}{2} (a_n - i b_n) &= \frac{1}{\pi} \int_{-\pi}^\pi \left(f(x)\cos(nx) - if(x)i\sin(nx)\right) \dee x \\
+                                             &= \frac{1}{2\pi} \int_{-\pi}^\pi f(x)e^{-inx} \dee x.
+    \end{split}
+        \]
+    Similarly
+    \[\begin{split}
+        \gamma_{-n} = \frac{1}{2} (a_n + i b_n) &= \frac{1}{\pi} \int_{-\pi}^\pi \left(f(x)\cos(nx) + if(x)i\sin(nx)\right) \dee x \\
+                                             &= \frac{1}{2\pi} \int_{-\pi}^\pi f(x)e^{+inx} \dee x.
+    \end{split}
+        \]
+\subsubsection{Fourier series on $2L$-periodic domains}
+
+Given a function $ f(x) $ extended over a $2L$-periodic domain, the Fourier series is given by 
+\[ f(x) = \frac{1}{2} a_0 + \sum_{n = 1}^\infty \left[a_n \cos\left(\frac{n\pi x}{L}\right) + b_n \sin\left(\frac{n\pi x}{L}\right)\right] \]
+where 
+\[ a_n = \frac{1}{L} \int_{-L}^L f(x)\cos\left(\frac{n\pi x}{L}\right) \dee x\]
+\[ b_n = \frac{1}{L} \int_{-L}^L f(x)\sin\left(\frac{n\pi x}{L}\right) \dee x\]
+
+The complex form is 
+\[ f(x) = \sum_{n = -\infty}^\infty \gamma_n e^{in\pi x /L} \; \; |x| \leq L\]
+where
+\[ \gamma_n = \frac{1}{2L} \int_{-L}^L f(x) e^{-in\pi x /L}\dee x \; \; n = 0, \pm 1, \pm 2, ...\]
+
+\subsection{Parseval's theorem}
+If $ f(x) $ is represented by its Fourier series 
+\[ f(x) = \frac{1}{2} a_0 + \sum_{n = 1}^\infty \left[a_n \cos(nx) + b_n \sin(nx)\right], \; \; -\pi \leq x \leq \pi \]
+then we have
+\[ \frac{1}{\pi} \int_{-\pi}^\pi f^2 \dee x = \frac{1}{2} a_0^2 + \sum_{n = 1}^\infty(a_n^2 + b_n^2).\]
 \end{document}

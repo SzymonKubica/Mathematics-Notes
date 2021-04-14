@@ -1,7 +1,7 @@
-PWD d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Calculus and Applications/Short Latex Written notes/Term 1
+PWD d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/CalculusAndApplications
 INPUT C:/Users/szymo/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt
-INPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Calculus and Applications/Short Latex Written notes/Term 1/term1.tex
-OUTPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Calculus and Applications/Short Latex Written notes/Term 1/term1.log
+INPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/CalculusAndApplications/term1.tex
+OUTPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/CalculusAndApplications/term1.log
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/article.cls
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/article.cls
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/size11.clo
@@ -57,9 +57,9 @@ INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/amscls/amsthm.s
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/amscls/amsthm.sty
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/enumitem/enumitem.sty
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/enumitem/enumitem.sty
-INPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Calculus and Applications/Short Latex Written notes/Term 1/term1.aux
-INPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Calculus and Applications/Short Latex Written notes/Term 1/term1.aux
-OUTPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Calculus and Applications/Short Latex Written notes/Term 1/term1.aux
+INPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/CalculusAndApplications/term1.aux
+INPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/CalculusAndApplications/term1.aux
+OUTPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/CalculusAndApplications/term1.aux
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/epstopdf-base.sty
@@ -114,12 +114,12 @@ INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmex1
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmti10.tfm
-OUTPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Calculus and Applications/Short Latex Written notes/Term 1/term1.pdf
+OUTPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/CalculusAndApplications/term1.pdf
 INPUT C:/Users/szymo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmti8.tfm
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmti7.tfm
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmbx12.tfm
-INPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Calculus and Applications/Short Latex Written notes/Term 1/term1.aux
+INPUT d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/CalculusAndApplications/term1.aux
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb

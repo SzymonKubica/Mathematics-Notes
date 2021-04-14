@@ -1,0 +1,326 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{verbatim}
+\usepackage{amsthm}
+\usepackage[shortlabels]{enumitem}
+\renewcommand{\baselinestretch}{1.5}
+\newcommand\F{\mathcal{F}}
+\newcommand\lb{\left\lbrace}
+\newcommand\rb{\right\rbrace}
+\newcommand\w{\omega}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\dee{\text{d}}
+\newcommand\st{\text{ such that }}
+\newcommand\sumOfSeries{\sum_{n = 0}^{\infty}}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{note}{Note}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\parindent 0ex
+\begin{document}
+\title{Mathematics Year I, Calculus and Applications I Term 1 \\ Most Important theorems, definitions and propositions. } 
+\date{\today}
+\author{Szymon Kubica} 
+\maketitle
+
+\section{Limits}
+\begin{note}
+    The following basic trigonometric limits are useful:
+    \[\lim_{h \to 0 } \frac{\sin h}{h} = 1 \hspace{2cm} \lim_{h \to 0 } \frac{\cos h - 1}{h} = 0.\]
+\end{note}
+
+\section{Derivative of a function}
+
+\begin{theorem}
+    If $ f(x) $ is differentiable at $ x = x_0 $, then it is also continuous there.
+\end{theorem}
+
+\section{MVT and IVT}
+
+\begin{theorem}
+    Let $ f $ be a function which is defined and differentiable on the open interval $ (a, b) $. Let $ c $ be a number in the interval which is a maximum for the function. Then $ f'(c) = 0 $.  
+\end{theorem}
+
+\begin{theorem}[Extreme Value Theorem]
+    Let $ f(x) $ be continuous on the closed interval $ [a, b] $. Then $ f(x) $ has a maximum and a minimum on this interval. i.e. There exists $ c_1 $ and $ c_2 $ such that $ f(c_1) \geq f(x) $
+    and $ f(c_2) \leq f(x) \; \forall \, x \in [a, b] $.
+\end{theorem}
+
+\begin{theorem}
+    Let $ f(x) $ be continuous over the closed interval $ a \leq x \leq b $ and differentiable on the open interval $ a < x < b $. Assume also that $ f(a) = f(b) = 0 $.
+    Then there exists a point c, $ c \in (a, b) $ such that  $ f'(c) = 0 $.
+\end{theorem}
+
+\begin{theorem}[Mean Value Theorem]
+    Let $ f(x) $ be continuous on $ [a,b] $ and differentiable on $ (a, b) $.
+    Then there exists a point $ c \in (a, b) $ such that 
+    \[ f'(c) = \frac{f(b) - f(a)}{b - a}\]
+\end{theorem}
+
+\begin{theorem}
+    Let $ f(x) $ be continuous on $ [a,b] $. Given any number $ y $ between $ f(a) $ and $ f(b) $, there exists a point $ x_y \in (a, b) $ such that $ f(x_y)  = y $.
+\end{theorem}
+
+\section{Inverse functions} 
+
+\begin{theorem}
+    Let $ f(x) $ be a stricty increasing or decreasing function. Then the inverse fuction exists.
+\end{theorem}
+
+\begin{theorem}
+    If $ f(x) $ is continuous on $ [a, b] $ and strictly increasing (or decreasing), and $ f(a) = y_a $ and $ f(b) = y_b $, then $ x = g(y) $ is defined on $ [y_a, y_b] $.
+\end{theorem}
+
+\begin{theorem}
+    Let $ f(x) $ be differentiable on $ (a, b) $ and $ f'(x) > 0 $ or $ f'(x) < 0 $ for all $ x \in (a, b) $. Then the inverse function exists and we have
+    \[ g'(y)\left(= f^{-1}(y)\right) = \frac{1}{f'(x)}.\]
+\end{theorem}
+
+\section{Exponentials and Logarithms}
+
+\begin{definition}[Natural Logarithm]
+   $ \log(x) $ is the area under the curve $ \frac{1}{x} $ between $ 1 $ and $ x $ if $ x \geq 1 $ and negative of the area under the curve $ \frac{1}{x} $ between $ 1 $ and $ x $ if $ x \in (0, 1) $
+   In particular, $ \log(0) = 1 $.
+\end{definition}
+
+\section{Function Estimates}
+
+\begin{theorem}
+    Let $ a $ be any positive number. Then $ \frac{(1 + a)^n}{n} \to \infty \text{ as } n \to \infty $.
+\end{theorem}
+
+\begin{theorem}
+    The function $ f(x) = \frac{e^x}{x}$ is strictly increasing for $ x > 1 $ and $ \lim_{x \to \infty} f(x) = \infty $ (exp beats x).
+\end{theorem}
+
+\begin{corollary}
+    The functions $ x = \log (x) $ and $ \frac{x}{\log(x)} $ become arbitrarily large as $ x $ becomes arbitrarily large (x beats log).
+\end{corollary}
+
+\begin{corollary}
+    As $ x $ becomes large, $ x^{1/x} $ approaches 1. 
+\end{corollary}
+
+\begin{theorem}[exp($ x $) beats any power of $ x $]
+    Let $ m $ be a positive integer. Then the function $ f(x) = \frac{e^x}{x^m} $ is strictly increasing for $ x > m $ and becomes arbitrarily large as $ x $ becomes arbitrarily large.
+\end{theorem}
+
+\section{L'Hopital's Rule}
+
+\begin{theorem}
+    Let $ f(x) $ and $ g(x) $ be differentiable on an open interval containing $ x_0 $ (except possibly at $ x_0 $). Assume that $ g(x) \neq 0 \text{ and } g'(x) \neq 0 $ for $ x $ in
+    an interval about $ x_0 $ but with $ x \neq x_0 $.  Assume also that $ f $, $ g $ are continuous at $ x_0 $ with $ f(x_0) = g(x_0) = 0 \text{, and } \lim_{x \to x_0} \frac{f'(x)}{g'(x)} = l. $
+    Then also:
+    \[ \lim_{x \to x_0} \frac{f(x)}{g(x) = l}.\]
+\end{theorem}
+
+\begin{theorem}[Cauchy Mean Value Theorem]
+    Let $ f $, $ g $ be continuous on $ [a, b] $ and differentiable on $ (a, b) $ with $ g(a) \neq g(b) $. Then there exists $ c \in (a, b) $ such that 
+    \[ g'(c)\frac{f(b) - f(a)}{g(b) - g(a)} = f'(c).\]
+\end{theorem}
+
+\section{Integration}
+
+\begin{definition}[Riemann Sum]
+   Let $(x_0, x_1, ..., x_n) $ be a partition of the interval $(a,b)$. Let $ f(x) $ be a function defined on $ (a, b) $. Take any sub-interval $ [x_{i - 1}, x_i] $ and let 
+   $ x_i^* \in [x_{i - 1}, x_i] $. Then the Riemann sum is defined as
+   \[ \sum_{i = 1}^n f(x_i^*)h,\]
+   where $ h = x_i - x_{i - 1}.$
+\end{definition}
+
+\section{MVT for Integrals}
+
+\begin{theorem}
+    Let $ f $ be continuous on $ [a, b] $. Then there exists a point $ x_0 \in (a, b) $ such that 
+    \[ f(x_0) = \frac{1}{b - a} \int_a^b f(x) \; \dee x.\]
+\end{theorem}
+
+\section{Applications of Integration} 
+
+\subsection{Length of curves}
+
+The length of curve defined by a function $ f(x) $ on the interval $ [a, b] $ is given by 
+\[ L = \int_a^b \sqrt{1 + (f'(x))^2} \; \dee x.\]
+We can also derive a formula in parametric form 
+\[ L = \int_{t_0}^{t_1} \left[\left(\frac{\dee x}{\dee t}\right)^2 + \left(\frac{\dee x}{\dee t}\right)^2 \right]^{\frac{1}{2}}\dee t.\]
+
+\subsection{Volumes of revolution}
+
+Given a area bounded by $ x = a $, $ x = b $, $ y = f(x) $, $ y = 0 $ we want to find the corresponding solids of revolution.
+
+The volume of the solid produced by revolving  $ y = f(x) $ about the $x$-axis is given by
+\[ V = \int_a^b \pi (f(x))^2 \dee x\]
+
+The volume of the solid produced by revolving $ y = f(x) $ about the $y$-axis is given by
+\[ V = \int_a^b 2\pi x f(x) \dee x \]
+
+\subsection{Surface areas of revolution}
+
+Given a curve defined by a function $ f(x) $ on the interval $ [a, b] $ we want to find the respective surface area of revolution obtained by revolving the curve about $x$-axis.
+It is given by
+\[ S = \int_a^b 2\pi f(x) \sqrt{1 + (f'(x)^2} \; \dee x\]
+
+\subsection{Centres of mass}
+
+First let us consider a simple one dimensional case with discrete masses in order to gain intuition for developing more sophisticated formulas.
+In this case if the centre of mass is at $ x = \bar x $, then we must have a zero total moment at this point. That is 
+\[ \sum m_k (\bar x - x_k) \text{ i.e. } \bar x = \dfrac{\sum_{k = 1}^n m_k x_k}{\sum_{k = 1}^n m_k}\]
+
+Now let us consider a two dimensional case with a continuous mass distribution.
+Given a area bounded by $ x = a $, $ x = b $, $ y = f(x) $, $ y = 0 $ we want to find its center of mass. 
+Suppose we have a center of mass at $ (\bar x, \bar y) $, we can consider the moments about $x$ and $y$-axis separately. 
+Then the $x$-coordinate of the center of mass is given by
+\[ \bar x = \dfrac{\int_a^b \frac{1}{2} (f(x))^2 \; \dee x}{\int_a^b f(x) \; \dee x}.\]
+
+The $y$-coordinate of the center of mass is given by
+\[ \bar y = \dfrac{\int_a^b xf(x) \; \dee x}{\int_a^b f(x) \; \dee x}.\]
+
+\subsection{Length of curves and areas using polar coordinates}
+We can use the parametric form of the formula for the length of a curve in order to derive a formula in polar coordinates.
+\[ L = \int_{t_0}^{t_1} \left[\left(\frac{\dee x}{\dee t}\right)^2 + \left(\frac{\dee x}{\dee t}\right)^2 \right]^{\frac{1}{2}}\dee t.\]
+
+Now in polar coordinates we have curves $ r = f(\theta) $ so we use $ \theta $ as a parameter. Since we know that 
+\[ x = r \cos(\theta) = f(\theta) \cos(\theta) \text{ and } y = r \sin(\theta) = f(\theta) \sin(\theta),\]
+We can substitute these equations into the formula above and obtain
+\[ L = \int_\alpha^\beta \left[(f'(\theta)\cos(\theta) - f(\theta)\sin(\theta))^2) + (f'(\theta)\sin(\theta) + f(\theta)\cos(\theta))^2\right] \; \dee \theta.\]
+As we simplify the expression above, we obtain:
+\[ L = \int_\alpha^\beta \sqrt{(f'(\theta))^2 + (f(\theta))^2} \; \dee \theta.\]
+Which can be written as 
+\[ L = \int_\alpha^\beta \left[\left(\frac{\dee r}{\dee \theta}\right)^2 + r^2\right]^{\frac{1}{2}} \dee \theta. \]
+
+\pagebreak
+
+\section{Series, Power Series and Taylor's Theorem}
+\subsection{Series and Convergence}
+
+\begin{theorem}
+    If $ \alpha > 1 $ is a rational number, then
+    \[ \sum_{n = 1}^\infty \frac{1}{n^\alpha} \text{ converges.}\]
+\end{theorem}
+
+\begin{proposition}
+    If $ \sum_{n = 1}^\infty a_n $ converges, then for every $ N $, the series $ \sum_{n = N}^\infty \to 0 \text{ as } N \to \infty$.
+    Intuition behind this is that the tail of the series needs to go to zero if the series converges. 
+\end{proposition}
+
+\begin{theorem}
+    Suppose $ (a_n)_{n \geq 1} $ is a decreasing sequence of positive numbers with $ a_n \to 0 \text{ as } n \to \infty$. 
+    Then the series  $ \sum_{n = 1}^\infty (-1)^{n - 1} \; a_n = a_1 - a_2 + a_3 - a_4 + ... $ converges.
+\end{theorem}
+
+\begin{theorem}[Comparison Test]
+   Let $ \sum_{n = 1}^\infty b_n $ be convergent with $ b_n $ non-negative. 
+   
+   If $ |a_n| \leq b_n \; \forall n \in \N, $ then $ \sum_{n = 1}^\infty a_n $ converges.  
+\end{theorem}
+
+\begin{theorem}[Integral Test]
+   Let $ f(x) $ be a function which is defined for all $ x \geq 1 $, and is positive and decreasing. 
+   Then the series
+   \[ \sum_{n = 1}^\infty f(n)\]
+   converges if and only if the improper integral $ \int_{1}^\infty f(x) \, \dee x $ converges.
+\end{theorem}
+
+\begin{theorem}[Ratio Test]
+   Let $ \sum_{n = 1}^\infty a_n $ be a series satisfying
+   \[ \lim_{n \to \infty} \left|\frac{a_{n + 1}}{a_n}\right| = L.\] 
+   Then:
+   \begin{enumerate}
+       \item If $ L < 1 $ the series converges absolutely.
+       \item If $ L > 1 $ the series diverges.
+       \item If $ L = 1 $ the test is inconclusive.
+   \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Root Test]
+   Let $ \sum_{n = 1}^\infty a_n $ be a series satisfying
+   \[ \lim_{n \to \infty} |a_n|^{\frac{1}{n}} = L.\] 
+   \begin{enumerate}
+       \item If $ L < 1 $ the series converges absolutely.
+       \item If $ L > 1 $ the series diverges.
+       \item If $ L = 1 $ the test is inconclusive.
+   \end{enumerate}
+\end{theorem}
+
+\subsection{Power Series}
+
+\begin{theorem}
+    Assume that there is a number $ R > 0 $ such that $ \sumOfSeries |a_n|R^n $ converges.
+    Then for all $ |x| < R $, the series $ \sumOfSeries a_n x^n $ converges absolutely. 
+\end{theorem}
+
+\begin{definition}
+    The greatest value of $ R $ for which we get convergence is called the radius of convergence and $\sumOfSeries a_n x^n $ converges absolutely if $ |x| < R $.
+    It is very important to check $ x = \pm R $ separately.
+\end{definition}
+
+\begin{theorem}[Ratio Test for power series]
+    Let $ \sumOfSeries a_n x^n $ be a power series and assume that $ \lim_{n \to \infty} \left|\frac{a_{n + 1}}{a_n}\right| = L $ exists.
+    Let $ R = \frac{1}{L} $. (If $ L = 0 $ let $ R = \infty $, if $ L = \infty $ let $ R = 0 $.) 
+    
+    Then
+    \begin{enumerate}
+        \item If $ |x| < R $ the series converges absolutely.
+        \item If $ |x| > R $ the power series diverges. 
+        \item If $ x = \pm R $ the power series could converge or diverge.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Root Test for power series]
+    Let $ \sumOfSeries a_n x^n $ be a power series and assume that $ \lim_{n \to \infty} \left|a_n\right|^{\frac{1}{n}}= L $ exists.
+    Then the radius of convergence of the power series is $ R = \frac{1}{L}. $
+\end{theorem}
+
+\begin{theorem}
+    Let $ f(x) = \sumOfSeries a_n x^n $ be a power series which converges absolutely for $ |x| < R $. Then $ f(x) $ is differentiable for $ |x| < R $, and
+    \[ f'(x) = \sum_{n = 1}^\infty na_nx^{n - 1}.\]
+\end{theorem}
+
+\begin{theorem}
+    Let $ f(x) = \sumOfSeries a_n x^n $ be a power series which converges absolutely for $ |x| < R $. Then in the interval $ |x| < R $, we have 
+    \[ \int f(x) \dee x = \sumOfSeries \frac{a_n x^{n + 1}}{n + 1}.\]
+\end{theorem}
+
+We can summarize the two theorems above by stating that whenever we are within the radius of convergence, we can both differentiate and integrate the series term by term.
+
+\begin{theorem}[Algebraic operations]
+    Let $ f(x) = \sumOfSeries a_n x^n $ be a power series with radius of convergence $R_1$, and $ g(x) = \sumOfSeries b_n x^n $ is another power series with 
+    radius of convergence $R_2$. Let
+    \[ R = min(R_1, R_2).\]
+    Then
+    \begin{enumerate}
+        \item $ f(x) + g(x) = \sumOfSeries (a_n + b_n) x^n \text{ for } |x| < R. $ 
+        \item $ cf(x) = \sumOfSeries c a_n x^n \text{ for } |x| < R_1 (c \neq 0).$ 
+        \item $ f(x)g(x) = \sumOfSeries \, (\sum_{m = 0}^n a_m b_{n - m}) x^n \text{ for } |x| < R.$
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Taylor Series}
+
+\begin{theorem}[Taylor's theorem]
+    Let f be a function defined on a closed interval between two numbers $ x_0 $ and $ x $. Assume that the function has $ n + 1 $ derivatives on the interval and that they are all continuous.
+    Then 
+    \[ f(x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f^{(2)}(x_0)}{2!}(x - x_0) + ... + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + R_n\]
+    Where the remainder $ R_n $ is given by 
+    \[ R_n = \int_{x_0}^x \frac{(x - t)^n}{n!} f^{(n+1)}(t) \, \dee t.\]
+    Using the integral MVT we can also derive an alternative form of the remainder term:
+    \[ R_n = \frac{f^{(n+1)} (c)}{(n + 1)!}(x - x_0)^{n + 1}\]
+    Where c is a number between $ x_0 $ and $ x $.
+\end{theorem}
+
+
+
+\end{document}

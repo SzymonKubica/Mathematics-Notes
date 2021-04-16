@@ -1,0 +1,174 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{verbatim}
+\usepackage{amsthm}
+\usepackage[shortlabels]{enumitem}
+\renewcommand{\baselinestretch}{1.5}
+\newcommand\F{\mathcal{F}}
+\newcommand\lb{\left\lbrace}
+\newcommand\rb{\right\rbrace}
+\newcommand\w{\omega}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\R{\mathbb{R}}
+\newcommand\N{\mathbb{N}}
+\newcommand\dee{\text{d}}
+\newcommand\st{\text{ such that }}
+\newcommand\sumOfSeries{\sum_{n = 0}^{\infty}}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{note}{Note}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\parindent 0ex
+\begin{document}
+\title{Mathematics Year I, Linear Algebra Term 1, 2 \\ Most Important theorems, definitions and propositions. } 
+\date{\today}
+\author{Szymon Kubica} 
+\maketitle
+
+\section{Introduction to matrices and vectors}
+\begin{definition}
+    The standard basis vectors for $ \R^n $ are the vectors
+    \begin{align}
+        e_1 &= \begin{pmatrix}
+            1 \\
+            0 \\ 
+            \vdots \\
+            0
+        \end{pmatrix},
+        \hspace{0.5cm}
+        e_2 = \begin{pmatrix}
+            0 \\
+            1 \\ 
+            \vdots \\
+            0
+        \end{pmatrix},
+        \hspace{0.5cm}
+        ...
+        \hspace{0.5cm}
+        e_n = \begin{pmatrix}
+            0 \\
+            0 \\ 
+            \vdots \\
+            1
+        \end{pmatrix},
+    \end{align}
+\end{definition}
+
+\begin{definition}
+    Let $ v_1, ... v_n $ be vectors in $ \R^n $. Any expression of the form
+    \[ \lambda_1v_1 + \lambda_2 v_2 + ... + \lambda_n v_n\]
+    is called linear combination of the vectors $ v_1, ... v_n $.
+\end{definition}
+
+\begin{definition}
+    The set of all linear combinations of a collection of vectors $ v_1, ... v_n $ is called the span of the vectors $ v_1, ... v_n $.
+    Notation: \[span\{  v_1, ... v_n  \}\].
+\end{definition}
+
+\begin{note}
+    $ R^n $ is equal to the span of the standard basis vectors.
+\end{note}
+
+\begin{definition}
+    The norm of $ v $ is the non negative real number defined by 
+    \[ ||v|| = \sqrt{v \cdot v}\].
+\end{definition}
+
+\begin{definition}
+    A vector $ v \in \R^n $ is called a unit vector if $ ||v|| = 1 $.
+\end{definition}
+
+\begin{definition}
+    Let $ u $ and $ v $ be vectors in $ \R^n $. The distance between $ u $ and $ v $ is defined by
+    \[ dist(u, v) := || u - v ||\].
+\end{definition}
+
+\begin{definition}
+    The $ (i, j) $ entry of a matrix is the entry in row $ i $ and column $ j $.
+    \[\begin{pmatrix}
+        a_{11} & a_{12} & ... & a_{1m} \\
+        \vdots &        & \ddots & \vdots \\
+        a_{n1} & a_{n2}       & ... & a{nm}
+    \end{pmatrix}\]
+    Most often we use the condensed notation $ M = (a_{ij}) $.
+\end{definition}
+
+\begin{definition}
+    The transpose of an $ n \times m $ matrix $ A = (a_{ij}) $ is the $ m \times n $ matrix whose $ (i, j) $ entry is $ a_{ji} $. We denote it as $ A^T $.
+\end{definition}
+
+The leading diagonal of a matrix is the $ (1, 1), (2,2) ... $ entries. So the transpose is obtained by doing a reflection in the leading diagonal.
+
+\begin{definition}
+    The identity matrix $ I_n = (a_{ij}) $ is the square matrix such that 
+    
+    $ a_{ij} = 0 \; \forall \, i \neq j \text{, and } a_{ii} = 1 \text{, where } 0 < i,j \leq n$.
+\end{definition}
+
+\begin{definition}
+    Let $ A = (a_{ij}) $ be a $ n \times m $ matrix and $\textbf{b}$ be the column vector of height $ n $ and whose $i$th entry is $ b_i $. 
+    Then $(v_1, ..., v_n)$ is a solution to the system
+    \[
+    \begin{cases}
+        a_{11}x_1 + a_{12}x_2 + ... + a_{1m}x_m &= b_1 \\
+        a_{21}x_1 + a_{22}x_2 + ... + a_{2m}x_m &= b_2 \\
+        \vdots                                  &= \vdots \\
+        a_{n1}x_1 + a_{n2}x_2 + ... + a_{nm}x_m &= b_n 
+    \end{cases}
+    \]
+    if and only if the vector $\textbf{v} \in \R^n $ with entries $ v_i $ is a solution of the equation
+    \[ Av = b\]
+    The matrix $ A $ is called the coefficient matrix of the system above. The augmented matrix associated to the system is the matrix obtained by adding $b$ as an extra column to $ A $.
+    It is denoted as $ (A|b) $.
+\end{definition}
+
+\section{Row operations} 
+\begin{definition}
+    A \textbf{row operation} is one of the following procedures we can apply to a matrix:
+    \begin{enumerate}
+        \item $ r_i(\lambda) :$ Multiply each entry in the $i$th row by a real number $ \lambda \neq 0 $.
+        \item $ r_{ij} :$ Swap row $i$ and row $j$. 
+        \item $ r_{ij}(\lambda) :$ Add $\lambda$ times row $i$ to row $j$. 
+    \end{enumerate}
+    \label{rowOps}
+\end{definition}
+
+\begin{proposition}
+    Let $Ax = \textbf{b} $ be a system of linear equations in matrix form. Let $ r $ be one of the row operations from Definition \ref{rowOps}, 
+    and let $(A'| \textbf{b}')$ be the result of applying $r$ to the augmented matrix $(A| \textbf{b})$. Then the vector $\textbf{v}$ is a solution of 
+    $Ax = \textbf{b} $ if and only if it is a solution of $A'x = \textbf{b}' $.
+\end{proposition}
+
+\section{A systematical way of solving linear systems.}
+\begin{definition}
+    The left-most non-zero entry in a non-zero row is called the \textbf{leading entry} of that row.
+\end{definition}
+
+\begin{definition}
+    A matrix is in \textbf{echelon form} if 
+    \begin{enumerate}
+        \item the leading entry in each non-zero row is $1$,
+        \item the leading 1 in each non-zero row is to the right of the leading 1 in any row above it,
+        \item the zero rows are below any non-zero rows. 
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    A matrix is in \textbf{row reduced echelon form (RRE)} if 
+    \begin{enumerate}
+        \item it is in echelon form,
+        \item the leading entry in each non zero row is the only non-zero entry in its column.
+    \end{enumerate}
+\end{definition}
+\end{document}

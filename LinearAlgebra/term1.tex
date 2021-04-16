@@ -20,6 +20,7 @@
 \newcommand\Q{\mathbb{Q}}
 \newcommand\R{\mathbb{R}}
 \newcommand\N{\mathbb{N}}
+\newcommand\Sf{\mathcal{S}}
 \newcommand\dee{\text{d}}
 \newcommand\st{\text{ such that }}
 \newcommand\sumOfSeries{\sum_{n = 0}^{\infty}}
@@ -408,4 +409,114 @@ A following algorithm can be used for computing the inverse of a matrix.
 \end{lemma}
 
 \section{Subspaces}
+
+\begin{definition}
+    Let $ V $ be a vector space. A subset $ U \subset V $ is called a subspace of $ V $ if:
+    \begin{enumerate}
+        \item If $ \mathbf{x} + \mathbf{y} \in U $ then $ \mathbf{x} + \mathbf{y} \in U $ (Closure under vector addition). 
+        \item $ \mathbf{0}_V \in U $.
+        \item If $ \mathbf{x} \in U $ then $ \forall \; \lambda \in \R . \; \lambda \mathbf{x} \in U $.
+    \end{enumerate}
+\end{definition}
+
+\section{Spanning sets}
+
+\begin{definition}
+    Let $ \mathcal{S} \subset V $ be any subset. A linear combination of elements in $ \mathcal{S} $ is a vector $ \mathbf{x} \in V $ which can be written as
+    \[ \mathbf{x} = \lambda_1\mathbf{v_1} + \lambda_2\mathbf{v_2} + ... + \lambda_n\mathbf{v_n}\]
+    where $ \mathbf{v_1}, \mathbf{v_2}, ..., \mathbf{v_n} $  are vectors in $ \mathcal{S} $, and $ \mathbf{\lambda_1}, \mathbf{\lambda_2}, ..., \mathbf{\lambda_n} $ are real numbers.
+\end{definition}
+
+\begin{lemma}
+    A non-empty subset $ U $ of a vector space $ V $ is a subspace if and only if every linear combination of elements of $ U $ is again in $ U $.
+\end{lemma}
+
+\begin{definition}
+    Let $ V $ be a vector space and let $ \mathcal{S} \subset V $ be a non-empty subset. 
+
+    Then \textbf{span} of $ \mathcal{S} $ written 
+    \[ \text{span } \mathcal{S} \subset V \]
+    is the set of all linear combinations of elements of $ \mathcal{S} $. If $ \mathcal{S} = \emptyset$ then we define span $ \mathcal{S} $ to be $ \{\mathbf{0}_V\}$. 
+\end{definition}
+
+\begin{lemma}
+    Let $ V $ be a vector space and let $ \mathcal{S} \subset V $ be any subset. Then $ \textup{span } \mathcal{S} $ is a subspace of $ V $.
+\end{lemma}
+
+\begin{definition}
+    Let $ V $ be a vector space. A subset $ \mathcal{S} \subset V $ is called a \textbf{spanning set} if $ \text{span } \mathcal{S} = V $.
+\end{definition}
+
+\begin{lemma}
+    Let $ V $ be a vector space, and let $ \Sf \subset V$ be any subset. Suppose $ \Sf \subset U $ for some subspace $ U \subset V $. Then $\textup{span } \Sf \subset U $. 
+    So if $ \Sf $ is a spanning set for $ V $, then $ \Sf $ cannot be contained in any proper subspace $ U \subsetneq V$
+\end{lemma}
+
+\begin{definition}
+    A vector space is called \textbf{finite-dimensional} if it has a finite spanning set. 
+\end{definition}
+
+\begin{definition}
+    Let $ V $ be a finite-dimensional vector space. The dimension of $ V $, denoted as $ \text{dim } V $, is the smallest $ n \in \N $ such that $ V $ has a spanning set of size $ n $.
+\end{definition}
+
+\section{Linear independence}
+
+\begin{definition}
+    A subset $ \mathcal{L} $ of a vector space $ V $ is called linearly dependent if we can find \textbf{distinct} vectors $ \mathbf{v_1}, \mathbf{v_2}, ..., \mathbf{v_n} \in \mathcal{L} $
+    and non-zero scalars $ \lambda_1 \neq 0,\; \lambda_2 \neq 0, \; ... \, ,\lambda_n \neq 0, $ such that  
+    \[ \lambda_1\mathbf{v}_1 +\lambda_2\mathbf{v}_2 + ... + \lambda_n\mathbf{v}_n = \mathbf{0}_V. \]
+\end{definition}
+\begin{note}
+    Any subset of a linearly independent set is also linearly-independent.
+\end{note}
+
+\begin{definition}
+    A \textbf{basis} of a vector space is a linearly independent spanning set.
+\end{definition}
+
+\begin{proposition}
+    Let $ \mathcal{B} = \{ \mathbf{v_1}, ..., \mathbf{v_n} \} \subset V $ be a finite basis of a vector space $ V $. Then every vector in $ V $ can be written as as linear combination of elements in $ \mathcal{B} $, in a unique way.
+    Conversely, any finite subset $ \mathcal{B} $ with this property is a basis.
+\end{proposition}
+
+\section{Bases an dimension}
+
+\begin{lemma}
+    Let $ \mathcal{S} \subset V $ be a spanning set, and suppose that $\mathcal{S}$ is not linearly independent.
+    Then there exists a vector $ \mathbf{x} \in \Sf \st \Sf' = \Sf  \; \backslash \{ \mathbf{x} \} $ is still a spanning set.
+\end{lemma}
+
+\begin{corollary}
+    Any finite spanning set contains a basis. 
+\end{corollary}
+
+\begin{corollary}
+    Any finite-dimensional vector space $ V $ has a basis.
+\end{corollary}
+
+\begin{proposition}[Steinitz exchange lemma - easy verion]
+    Let $ \Sf \subset V $ be a spanning set, and let $ \mathbf{x} \in V $ be any non-zero vector. Then there exists a vector $ \mathbf{y} \in \Sf \st $ the set
+    \[ \Sf' = (\Sf \backslash \{ \mathbf{y} \}) \cup \{ \mathbf{x} \} \]
+    is still a spanning set.
+\end{proposition}
+
+\begin{proposition}[Steinitz exchange lemma - full verion]
+    Let $ \Sf \subset V $ be a spanning set, and let $ \mathcal{L} \{ \mathbf{x}_1, ..., \mathbf{x}_n \}$ be a finite linearly independent subset of $ V $. 
+    Then there exists a subset $ \mathcal{T} \{ \mathbf{y}_1, ..., \mathbf{y}_n \}\subset \Sf $, with the same size as $ \mathcal{L} $, such that  
+    \[ \Sf' = (\Sf \backslash \mathcal{T}) \cup \mathcal{L} \]
+    is still a spanning set.
+\end{proposition}
+
+\begin{corollary}
+    Let $ V $ be a finite-dimensional vector space, let $ \Sf \subset V $ be a finite spanning set and let $ \mathcal{L} \subset V $ be a linearly independent subset. 
+    Then $ \mathcal{L} $ is finite and $\# \mathcal{L} \leq \# \Sf $.
+\end{corollary}
+
+\begin{theorem}
+    Let $ V $ be a finite-dimensional vector space with $ \textup{dim } V = n $. Then any basis of $ V $ is finite and has size $ n $.
+\end{theorem}
+
+\section{Dimensions of subspaces}
+    
 \end{document}

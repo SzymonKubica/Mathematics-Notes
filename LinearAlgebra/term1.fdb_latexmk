@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1618581375 "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.tex" "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.pdf" "term1" 1618581376
+["pdflatex"] 1618600799 "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.tex" "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.pdf" "term1" 1618600799
   "C:/Users/szymo/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1535460544 4160885 fea1116ceb8a1c560fbbecd7fe814c0f ""
   "C:/Users/szymo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1618255802 98598 5168e858b4c7d99bb17a48b3c6d0d21e ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
@@ -30,6 +30,7 @@
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmti8.tfm" 1136768653 1504 1747189e0441d1c18f3ea56fafc1c480 ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
+  "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb" 1247596666 32166 b0c356b15f19587482a9217ce1d8fa67 ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247596666 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
@@ -82,13 +83,13 @@
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/grfext.sty" 1522794645 7075 2fe3d848bba95f139de11ded085e74aa ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty" 1522794647 22417 1d9df1eb66848aa31b18a593099cf45c ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/tools/verbatim.sty" 1525438740 7474 cf84171354dfa1855684c0946ff000f1 ""
-  "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.aux" 1618581376 736 b55a8ca397806609d558c15212e62754 ""
-  "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.tex" 1618581374 16733 1951c1f0b306d0fb6a1bc00318fb44c7 ""
-  "term1.aux" 1618581376 736 b55a8ca397806609d558c15212e62754 "pdflatex"
-  "term1.tex" 1618581374 16733 1951c1f0b306d0fb6a1bc00318fb44c7 ""
+  "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.aux" 1618600799 1063 b424c737964528c7d6973101ab769a1a ""
+  "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.tex" 1618600797 22191 316d85c38e696741699a22db7988f022 ""
+  "term1.aux" 1618600799 1063 b424c737964528c7d6973101ab769a1a "pdflatex"
+  "term1.tex" 1618600797 22191 316d85c38e696741699a22db7988f022 ""
   (generated)
-  "term1.log"
-  "term1.aux"
-  "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.pdf"
   "term1.pdf"
+  "term1.log"
   "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.log"
+  "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.pdf"
+  "term1.aux"

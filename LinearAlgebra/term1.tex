@@ -29,6 +29,7 @@
 \newtheorem{note}{Note}
 \newtheorem{proposition}{Proposition}
 \newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
 \parindent 0ex
 \begin{document}
 \title{Mathematics Year I, Linear Algebra Term 1, 2 \\ Most Important theorems, definitions and propositions. } 
@@ -171,4 +172,133 @@ The leading diagonal of a matrix is the $ (1, 1), (2,2) ... $ entries. So the tr
         \item the leading entry in each non zero row is the only non-zero entry in its column.
     \end{enumerate}
 \end{definition}
+Solution algorithm
+
+If we have a system of equations 
+\[ Ax = b\]
+and $ A $ is in RRE form, then we can easily read off the solutions (if any exist). There are four cases to consider.
+\begin{itemize}
+    \item \textbf{Case 1.} Every column of $A$ contains a leading 1, and there are no zero rows. In this cas the only possibility is that $ A = I_n $.
+    Then the equations are simply
+    \begin{equation}
+        \begin{split}
+            x_1 &= b_1 \\
+            x_2 &= b_2 \\
+            \vdots & \\
+            x_n &= b_n \\
+        \end{split}
+    \end{equation}
+    and they have a unique solution, i.e. the entries of $b$.
+    \item \textbf{Case 2.} Every column of $A$ contains a leading 1, and there are some zero rows. Then $A$ must have more rows than column, and it must be a matrix of the from
+    \begin{align}
+        A &= \begin{pmatrix}
+            I_n \\
+            \textbf{0}_{k \times n}
+        \end{pmatrix}
+    \end{align}
+    Which looks like an identity matrix with a block of zero rows underneath. In this case the respective equations are 
+    \begin{equation}
+        \begin{split}
+            x_1 &= b_1 \\
+            \vdots & \\
+            x_n &= b_n \\
+        \end{split}
+    \end{equation}
+    And the last $k$ of them are
+    \begin{equation}
+        \begin{split}
+            0 &= b_{n+1} \\
+            \vdots & \\
+            x_n &= b_{n + k}. \\
+        \end{split}
+    \end{equation}
+    Now there are two possibilities:
+    \begin{enumerate}
+        \item If any of the last $k$ entries of $\textbf{b}$ are non-zero then this system has no solutions, i.e. it is inconsistent.
+        \item If the last $k$ entries of $\textbf{b}$ are all zero then the system has a unique solution, given by setting $ x_i = b_i \;\forall \; i \in [1, n] $.
+    \end{enumerate}
+    \item \textbf{Case 3.} Some columns of $A$ do not contain a leading 1, but there are no zero rows. For example
+    \begin{align}
+        A &= \begin{pmatrix}
+            1 & a_{12} & 0 \\
+            0 & 0 & 1 \\
+        \end{pmatrix}.
+    \end{align}
+    If the $i$th column of $A$ does not contain a leading 1, then the corresponding $x_i$ is called a \textbf{free variable}. 
+    The remaining variables are called basic variables. This kind of system has infinitely many solutions, we call such system underdetermined.
+\end{itemize}
+
+See the full version of the notes for a step by step proof-algorithm how to turn any matrix into RRE form.
+
+Now we have a systematic procedure for solving a system of simultaneous linear equations $Ax = \textbf{b}$.
+\begin{enumerate}
+    \item Form the augmented matrix $(A|\textbf{b})$.
+    \item Apply the algorithm to put the augmented matrix into RRE form $(A'|\textbf{b}')$.
+    \item Read off the solutions to $A'x = \textbf{b}'$.
+\end{enumerate}
+\begin{note}
+    In fact we only need to put the left block $A'$ to be able to read off the solutions.
+\end{note}
+
+\begin{proposition}
+    The number of solutions to a system $Ax = \textbf{b}$ is always either 0, 1 or $\infty$. 
+\end{proposition}
+
+\section{Matrix Multiplication}
+\begin{remark}
+   The easiest way to remember how to multiply matrices is as follows 
+   
+   In order to multiply $AB$ where $A \in M_{n \times m} (\R) $ and $B \in M_{m \times p} (\R) $ we write
+   $ r_1, r_2, ..., r_n \in \R^m $ for the rows of $A$ and $ c_1, c_2, ..., c_n \in \R^m $ for the columns of $B$. 
+   Then the definitions states that the $(i, j)$ entry of $AB \in M_{n \times p} (\R) $ is the dot product
+   \[ r_i^T \cdot c_j\]
+   We can view this as in order to determine one column of $AB$ we take the respective column of $B$ and scan $A$ with it from top to bottom multiplying each row of $A$ 
+   by the current column.
+\end{remark}
+
+\begin{definition}
+    A matrix $ A \in M_{n \times m} (R) $ defines a function from $\R^m $ to $ \R^n $, which we denote by
+    \[\begin{split}
+        T_A : \R^m &\to \R^n \\
+        \textbf{v} &\mapsto A\textbf{v}.
+    \end{split}
+    \]
+\end{definition}
+Provided that two matrices have correct dimensions, we can compose the functions defined by them.
+\begin{lemma}
+    $T_A \circ T_B = T_{AB} $, i.e for any $\textbf{v} \in \R^p $ we have
+    \[ A(B\textbf{v}) = (AB) \textbf{v}.\]
+    Where $A \in M_{n \times m} (\R) $ and $B \in M_{m \times p} (\R) $ 
+\end{lemma}
+
+\subsection{Matrix multiplication properties.}
+\begin{proposition}
+    Let $ A, A' \in M_{m \times n} (\R) $, let $ B, B' \in M_{n \times p} (\R) $ let $C \in M_{p \times q} (\R)$ Then the following holds. 
+    \begin{enumerate}
+        \item $A(BC) = (AB)C $ (associativity).
+        \item $A(B + B') = AB + AB' $
+        
+        and
+
+        $(A + A')B = AB + A'B $ 
+
+        (left and right distributivity of multiplication over addition.)
+        \item $ \forall \; \lambda \in \R (\lambda A)B = \lambda(AB) = A(\lambda B) $.
+    \end{enumerate}
+\end{proposition}
+
+The usual rules about multiplication by zero and one translate onto matrix multiplication with a certain degree of caution. 
+
+\begin{lemma}
+    Let $ A \in M_{n \times m} (\R) $.
+    \begin{enumerate}
+        \item $ \forall \; k \in \N \; \textbf{0}_{k \times n} A = \textbf{0}_{k \times m} \text{ and } A\textbf{0}_{m \times k}  = \textbf{0}_{n \times k}. $
+        \item $ I_n A = A = A I_m $.
+    \end{enumerate}
+\end{lemma}
+\begin{lemma}
+    Let $ diag(d_1, ..., d_n) $ and $ diag(d_1', ..., d_n') $ be two diagonal matrices $ \in M_{n \times n} (\R) $. 
+    
+    Then their product is $ diag(d_1 d_1', ..., d_n d_n') $.
+\end{lemma}
 \end{document}

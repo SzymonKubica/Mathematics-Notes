@@ -12,6 +12,7 @@
 \usepackage{amsthm}
 \usepackage[shortlabels]{enumitem}
 \renewcommand{\baselinestretch}{1.5}
+
 \newcommand\F{\mathcal{F}}
 \newcommand\lb{\left\lbrace}
 \newcommand\rb{\right\rbrace}
@@ -22,6 +23,10 @@
 \newcommand\dee{\text{d}}
 \newcommand\st{\text{ such that }}
 \newcommand\sumOfSeries{\sum_{n = 0}^{\infty}}
+\newcommand\aMatrix{A \inMatrix }
+\newcommand\inMatrix{\in M_{n \times m} (\R)}
+\newcommand\inMatrixSq{\in M_{n \times n} (\R)}
+
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
 \theoremstyle{definition}
@@ -30,6 +35,7 @@
 \newtheorem{proposition}{Proposition}
 \newtheorem{corollary}{Corollary}
 \newtheorem{remark}{Remark}
+
 \parindent 0ex
 \begin{document}
 \title{Mathematics Year I, Linear Algebra Term 1, 2 \\ Most Important theorems, definitions and propositions. } 
@@ -118,7 +124,7 @@ The leading diagonal of a matrix is the $ (1, 1), (2,2) ... $ entries. So the tr
 \end{definition}
 
 \begin{definition}
-    Let $ A = (a_{ij}) $ be a $ n \times m $ matrix and $\textbf{b}$ be the column vector of height $ n $ and whose $i$th entry is $ b_i $. 
+    Let $ A = (a_{ij}) $ be a $ n \times m $ matrix and $\mathbf{b}$ be the column vector of height $ n $ and whose $i$th entry is $ b_i $. 
     Then $(v_1, ..., v_n)$ is a solution to the system
     \[
     \begin{cases}
@@ -128,7 +134,7 @@ The leading diagonal of a matrix is the $ (1, 1), (2,2) ... $ entries. So the tr
         a_{n1}x_1 + a_{n2}x_2 + ... + a_{nm}x_m &= b_n 
     \end{cases}
     \]
-    if and only if the vector $\textbf{v} \in \R^n $ with entries $ v_i $ is a solution of the equation
+    if and only if the vector $\mathbf{v} \in \R^n $ with entries $ v_i $ is a solution of the equation
     \[ Av = b\]
     The matrix $ A $ is called the coefficient matrix of the system above. The augmented matrix associated to the system is the matrix obtained by adding $b$ as an extra column to $ A $.
     It is denoted as $ (A|b) $.
@@ -146,9 +152,9 @@ The leading diagonal of a matrix is the $ (1, 1), (2,2) ... $ entries. So the tr
 \end{definition}
 
 \begin{proposition}
-    Let $Ax = \textbf{b} $ be a system of linear equations in matrix form. Let $ r $ be one of the row operations from Definition \ref{rowOps}, 
-    and let $(A'| \textbf{b}')$ be the result of applying $r$ to the augmented matrix $(A| \textbf{b})$. Then the vector $\textbf{v}$ is a solution of 
-    $Ax = \textbf{b} $ if and only if it is a solution of $A'x = \textbf{b}' $.
+    Let $Ax = \mathbf{b} $ be a system of linear equations in matrix form. Let $ r $ be one of the row operations from Definition \ref{rowOps}, 
+    and let $(A'| \mathbf{b}')$ be the result of applying $r$ to the augmented matrix $(A| \mathbf{b})$. Then the vector $\mathbf{v}$ is a solution of 
+    $Ax = \mathbf{b} $ if and only if it is a solution of $A'x = \mathbf{b}' $.
 \end{proposition}
 
 \section{A systematical way of solving linear systems.}
@@ -193,7 +199,7 @@ and $ A $ is in RRE form, then we can easily read off the solutions (if any exis
     \begin{align}
         A &= \begin{pmatrix}
             I_n \\
-            \textbf{0}_{k \times n}
+            \mathbf{0}_{k \times n}
         \end{pmatrix}
     \end{align}
     Which looks like an identity matrix with a block of zero rows underneath. In this case the respective equations are 
@@ -214,8 +220,8 @@ and $ A $ is in RRE form, then we can easily read off the solutions (if any exis
     \end{equation}
     Now there are two possibilities:
     \begin{enumerate}
-        \item If any of the last $k$ entries of $\textbf{b}$ are non-zero then this system has no solutions, i.e. it is inconsistent.
-        \item If the last $k$ entries of $\textbf{b}$ are all zero then the system has a unique solution, given by setting $ x_i = b_i \;\forall \; i \in [1, n] $.
+        \item If any of the last $k$ entries of $\mathbf{b}$ are non-zero then this system has no solutions, i.e. it is inconsistent.
+        \item If the last $k$ entries of $\mathbf{b}$ are all zero then the system has a unique solution, given by setting $ x_i = b_i \;\forall \; i \in [1, n] $.
     \end{enumerate}
     \item \textbf{Case 3.} Some columns of $A$ do not contain a leading 1, but there are no zero rows. For example
     \begin{align}
@@ -230,18 +236,18 @@ and $ A $ is in RRE form, then we can easily read off the solutions (if any exis
 
 See the full version of the notes for a step by step proof-algorithm how to turn any matrix into RRE form.
 
-Now we have a systematic procedure for solving a system of simultaneous linear equations $Ax = \textbf{b}$.
+Now we have a systematic procedure for solving a system of simultaneous linear equations $Ax = \mathbf{b}$.
 \begin{enumerate}
-    \item Form the augmented matrix $(A|\textbf{b})$.
-    \item Apply the algorithm to put the augmented matrix into RRE form $(A'|\textbf{b}')$.
-    \item Read off the solutions to $A'x = \textbf{b}'$.
+    \item Form the augmented matrix $(A|\mathbf{b})$.
+    \item Apply the algorithm to put the augmented matrix into RRE form $(A'|\mathbf{b}')$.
+    \item Read off the solutions to $A'x = \mathbf{b}'$.
 \end{enumerate}
 \begin{note}
     In fact we only need to put the left block $A'$ to be able to read off the solutions.
 \end{note}
 
 \begin{proposition}
-    The number of solutions to a system $Ax = \textbf{b}$ is always either 0, 1 or $\infty$. 
+    The number of solutions to a system $Ax = \mathbf{b}$ is always either 0, 1 or $\infty$. 
 \end{proposition}
 
 \section{Matrix Multiplication}
@@ -260,14 +266,14 @@ Now we have a systematic procedure for solving a system of simultaneous linear e
     A matrix $ A \in M_{n \times m} (R) $ defines a function from $\R^m $ to $ \R^n $, which we denote by
     \[\begin{split}
         T_A : \R^m &\to \R^n \\
-        \textbf{v} &\mapsto A\textbf{v}.
+        \mathbf{v} &\mapsto A\mathbf{v}.
     \end{split}
     \]
 \end{definition}
 Provided that two matrices have correct dimensions, we can compose the functions defined by them.
 \begin{lemma}
-    $T_A \circ T_B = T_{AB} $, i.e for any $\textbf{v} \in \R^p $ we have
-    \[ A(B\textbf{v}) = (AB) \textbf{v}.\]
+    $T_A \circ T_B = T_{AB} $, i.e for any $\mathbf{v} \in \R^p $ we have
+    \[ A(B\mathbf{v}) = (AB) \mathbf{v}.\]
     Where $A \in M_{n \times m} (\R) $ and $B \in M_{m \times p} (\R) $ 
 \end{lemma}
 
@@ -292,7 +298,7 @@ The usual rules about multiplication by zero and one translate onto matrix multi
 \begin{lemma}
     Let $ A \in M_{n \times m} (\R) $.
     \begin{enumerate}
-        \item $ \forall \; k \in \N \; \textbf{0}_{k \times n} A = \textbf{0}_{k \times m} \text{ and } A\textbf{0}_{m \times k}  = \textbf{0}_{n \times k}. $
+        \item $ \forall \; k \in \N \; \mathbf{0}_{k \times n} A = \mathbf{0}_{k \times m} \text{ and } A\mathbf{0}_{m \times k}  = \mathbf{0}_{n \times k}. $
         \item $ I_n A = A = A I_m $.
     \end{enumerate}
 \end{lemma}
@@ -301,4 +307,105 @@ The usual rules about multiplication by zero and one translate onto matrix multi
     
     Then their product is $ diag(d_1 d_1', ..., d_n d_n') $.
 \end{lemma}
+
+\section{Inverse of a matrix}
+\begin{definition}
+    Let $ \aMatrix $ An $ n \times n $ matrix  $ A^{-1} $ such that 
+    \[ AA^{-1} = A^{-1}A = I_n\]
+    is called an \textbf{inverse} of $A$.
+    A matrix $A$ is called \textbf{invertible} if the inverse exists, \textbf{singular} if not.
+\end{definition}
+
+\begin{lemma}
+    \begin{enumerate}
+        \item If $A$ is invertible, then the inverse is unique.
+        \item If $A$ is invertible and either $AB = I_n$ or $BA = I_n$ for some $ B \inMatrixSq $, then $ B = A^{-1}$.
+    \end{enumerate}
+\end{lemma}
+
+\begin{lemma}
+    Suppose $ A, B \inMatrixSq $ are invertible. Then $AB$ is invertible and 
+    \[ (AB)^{-1} = B^{-1}A^{-1}.\]
+\end{lemma}
+
+\begin{lemma}
+    Let $ A \inMatrixSq $.
+    \begin{enumerate}
+        \item If there exists $ \mathbf{v} \neq 0 \in \R^n$ such that $ A\mathbf{v} = \mathbf{0}$ then $ A $ is not invertible.
+        \item If there exists a non zero matrix $ B \inMatrixSq $ such that $ AB = \mathbf{0}_{n \times n} $ or  $ BA = \mathbf{0}_{n \times n} $
+        then $ A $ is not invertible.
+    \end{enumerate}
+\end{lemma}
+
+\begin{corollary}
+    If $ A \inMatrixSq $ has a column of zeros, then $ A $ is not invertible.
+\end{corollary}
+
+\begin{corollary}
+    If $ A \inMatrixSq $ has a row of zeros, then $ A $ is not invertible.
+\end{corollary}
+
+\begin{lemma}
+    If $ A \inMatrixSq $ and $ A' $ is obtained from $ A $ by a row operation, then $ A' $ is invertible if and only if $ A $ is.
+\end{lemma}
+
+\begin{lemma}
+    If $ A \inMatrixSq $ and $ A' $ is the RRE form of $ A $ , then $ A' $ is invertible if and only if it has no zero rows.
+\end{lemma}
+
+\begin{lemma}
+    A matrix $ A \inMatrixSq $  is invertible if and only if its RRE form is the identity matrix.
+\end{lemma}
+
+\begin{proposition}
+    A matrix $ A \inMatrixSq $ is invertible if and only if there is no non-zero vector $ \mathbf{v} \in \R^n \st A\mathbf{v} = \mathbf{0} $.
+\end{proposition}
+
+A following algorithm can be used for computing the inverse of a matrix.
+\begin{enumerate}
+    \item Write the augmented matrix $ (A|I_n) $.
+    \item Row reduce $ (A|I_n) $ and bring it into RRE form.
+    \item If $A$ is invertible this process will transform the $A$ to its RRE form and $I_n$ to $A^{-1}$.
+\end{enumerate}
+
+\begin{remark}
+    The algorithm described above gives us another method for finding solutions of linear systems of equations. Assuming we have such a system in matrix form $ Ax = b $,
+    and $A$ is an invertible matrix, we can compute $A^{-1}$ and rewrite our system as $ x = A^{-1}b$. Note that it works if and only if $A$ is invertible
+    and therefore the system has a unique solution.
+\end{remark}
+
+\section{Vector spaces}
+\begin{definition}
+    A \textbf{vector space} is the following data:
+    \begin{itemize}
+        \item A set $V$. We will refer to the elements of $V$ as vectors.
+        \item A binary operation $ + \, : V \times V \to V $, which we call addition.
+        \item A function $ \R \times V \to V $, which we call scalar multiplication. We usually omit the symbol of it.
+    \end{itemize}
+    We require that the following axioms hold:
+    \begin{enumerate}
+        \item The set $V$ with the binary operation $+$ forms an Abelian group. We denote the identity element of it as $\mathbf{0}_V$
+        \item $ \forall \; \mathbf{v} \in V \text{ we have } 1\mathbf{v} = \mathbf{v} $.
+        \item $ \forall \; \lambda, \mu \in \R \; \forall \; \mathbf{v} \in V \text{ we have } \lambda (\mu \mathbf{v}) = (\lambda\mu)\mathbf{v} $.
+        \item $ \forall \; \lambda, \in \R \; \forall \; \mathbf{u}, \mathbf{v} \in V \text{ we have } \lambda (\mathbf{u} + \mathbf{v}) = \lambda\mathbf{u} + \lambda\mathbf{v}$.
+
+        (distributivity of scalar multiplication over addition)
+        \item $ \forall \; \lambda, \mu \in \R \; \forall \; \mathbf{v} \in V \text{ we have } (\lambda + \mu) \mathbf{v} = \lambda\mathbf{v}  + \mu\mathbf{v} $.
+
+        (distributivity of scalar multiplication over scalar addition)
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+    Let $ V $ be a vector space and let $ \mathbf{x} \in V $.
+    \begin{enumerate}
+        \item For any positive integer $ n \in \R $, we have 
+        \[ n\mathbf{x} = \mathbf{x} + \mathbf{x} + ... + \mathbf{x} \]
+        where there are $ n $ terms on the right-hand-side.
+        \item $0 \mathbf{x} = \mathbf(0)_V $.
+        \item $ (-1)\mathbf{x} $ is the additive inverse of $ \mathbf{x} $.
+    \end{enumerate}
+\end{lemma}
+
+\section{Subspaces}
 \end{document}

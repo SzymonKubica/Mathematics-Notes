@@ -21,6 +21,13 @@
 \newcommand\R{\mathbb{R}}
 \newcommand\N{\mathbb{N}}
 \newcommand\Sf{\mathcal{S}}
+\newcommand\Lf{\mathcal{L}}
+\newcommand\Bf{\mathcal{B}}
+\newcommand\xb{\mathbf{x}}
+\newcommand\yb{\mathbf{y}}
+\newcommand\bb{\mathbf{b}}
+\newcommand\vb{\mathbf{v}}
+\newcommand\im{\textup{Im}}
 \newcommand\dee{\text{d}}
 \newcommand\st{\text{ such that }}
 \newcommand\sumOfSeries{\sum_{n = 0}^{\infty}}
@@ -518,5 +525,90 @@ A following algorithm can be used for computing the inverse of a matrix.
 \end{theorem}
 
 \section{Dimensions of subspaces}
-    
+
+\begin{lemma}
+    Suppose $ \mathcal{L} \subset V $ is a linearly independent subset. Let $ \mathbf{v} \in V $ be a vector which does not lie in $ \textup{span } \mathcal{L} $.
+    Then $ \Lf \cup \{ \mathbf{v} \} $ is linearly independent.
+\end{lemma} 
+
+\begin{lemma}
+    If $ V $ is not finite-dimensional, then for any $ n \in \N $ we can find linearly independent subset $ \Lf \subset V $ of size $ n $. 
+\end{lemma}
+ 
+\begin{lemma}
+    Let $ V $ be a finite-dimensional vector space with $ \textup{dim } V = n $. Then any linearly independent subset $ \Lf \subset V $ of size $ n $ must be a basis.
+\end{lemma}
+
+\begin{lemma}
+    If $ V $ is finite-dimensional then any linearly independent subset is contained in a basis.
+\end{lemma}
+
+\begin{proposition}
+    Let $ V $ be a finite-dimensional vector space and let $ U \subset V $ be a subspace.
+    \begin{enumerate}
+        \item $ U $ is finite-dimensional.
+        \item $ \textup{dim } U \leq \textup{dim } V$ .
+        \item If $ \textup{dim } U = \textup{dim } V$ then $ U = V $.
+    \end{enumerate}
+\end{proposition}
+
+\section{Linear maps}
+
+\begin{definition}
+    Let $ U $ and $ V $ be vector spaces. A function $ f : U \to V $ is called a \textbf{linear map} if
+    \begin{itemize}
+        \item $ f(\xb + \yb) = f(\xb) + f(\yb) $ for all $ \xb, \yb \in U $,
+        \item $ f(\lambda\xb) = \lambda f(\xb) $ for all $ \xb \in U $ and all $ \lambda \in \R $.
+    \end{itemize}
+\end{definition}
+
+\begin{lemma}
+    If $ f : U \to V $ is linear then $ f(\mathbf{0}_U) =\mathbf{0}_V $. 
+\end{lemma}
+
+\begin{lemma}
+    A function composition of linear maps is also a linear map.
+\end{lemma}
+
+\begin{definition}
+    Let $ f : U \to V $ be a linear map. 
+    \begin{itemize}
+        \item The \textbf{image} of f, denoted as $ \im \, f $ is defined to be the subset 
+        \[ \{ f(\xb)\, |\,  \xb \in U \} \subset V\]
+        \item The \textbf{ker} of f, denoted as $ \ker \, f $ is defined to be the subset 
+        \[ \{ \xb \in U\, |\,  f(\xb) = \mathbf{0}_V \} \subset U\]
+    \end{itemize}
+\end{definition}
+
+\begin{lemma}
+    Let $ f : U \to V $ be a linear map between vector spaces. Then $ \ker \, f $ is a subspace of $ U $ and $ \im \, f $ is a subspace of $ V $.
+\end{lemma}
+
+\begin{lemma}
+    A linear map $ f : U \to V $ is injective if and only if $ \ker \, f = \{ \mathbf{0}_U \} $.
+\end{lemma}
+
+\begin{lemma}
+    Let $ f : U \to V $ be a linear map, and fix $ \yb \in V $. Suppose $ \xb \in U $ is such that $ f(\xb) = \yb $. Then
+    \[ f^{-1} (\yb) = \{\xb + \mathbf{v}\,  | \, \mathbf{v} \in \ker \, f\}\]
+\end{lemma}
+
+\section{Linear maps and bases}
+
+\begin{proposition}
+    Let $ f : \R^k \to \R^n $ be linear. Then $ f = T_A $ for some matrix $ A \in M_{n \times k} (\R) $
+\end{proposition}
+
+\begin{proposition}
+    Let $ f : U \to V $ and $ g : U \to V $  be two linear maps, and let $ \Bf = \{ \bb_1, ..., \bb_k \} $ be a basis for $ U $. Suppose $ f(\bb_i) = g(\bb_i) $
+    for each $ i = 1, ..., k. $ Then $ f = g $.
+\end{proposition}
+
+\begin{proposition}
+    Let $ U $ and $ V $ be vector spaces. Let $ \Bf = \{ \bb_1, ..., \bb_k \} $ be a basis for $ U $, and let $ \{\vb_1, ..., \vb_k \} $ be any set of $ k $ vectors in $ V $.
+    Then there is a unique linear map $ f : U \to V \st $ $ f (\bb_i) = \vb_i $ for each $ i $.
+\end{proposition}
+
+\section{Isomorphisms}
+% TODO - page 45
 \end{document}

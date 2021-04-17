@@ -23,11 +23,16 @@
 \newcommand\Sf{\mathcal{S}}
 \newcommand\Lf{\mathcal{L}}
 \newcommand\Bf{\mathcal{B}}
+\newcommand\Cf{\mathcal{C}}
 \newcommand\xb{\mathbf{x}}
 \newcommand\yb{\mathbf{y}}
 \newcommand\bb{\mathbf{b}}
+\newcommand\cb{\mathbf{c}}
+\newcommand\eb{\mathbf{e}}
 \newcommand\vb{\mathbf{v}}
 \newcommand\im{\textup{Im}}
+\newcommand\rank{\textup{rank}}
+\newcommand\nullity{\textup{nullity}}
 \newcommand\dee{\text{d}}
 \newcommand\st{\text{ such that }}
 \newcommand\sumOfSeries{\sum_{n = 0}^{\infty}}
@@ -610,5 +615,114 @@ A following algorithm can be used for computing the inverse of a matrix.
 \end{proposition}
 
 \section{Isomorphisms}
-% TODO - page 45
+
+\begin{definition}
+    A linear map $ f : U \to V $ between two vector spaces is called an \textbf{isomorphism} if $ f $ is bijective. If there exists an isomorphism from $ U $ to $ V $ 
+    we say that $ U $ is isomorphic to $ V $ and write
+    \[ U \cong V.\]
+\end{definition}
+
+\begin{proposition}
+    Let $ V $ be a vector space with $ \textup{dim } V  = n$. Then $ V $ is isomorphic to $ \R^n $. 
+\end{proposition}
+
+\begin{lemma}
+   Let $ f : U \to V $ be a linear map, and let $ \Bf = \{ \bb_1, ..., \bb_k \} $ be a basis for $ U $. Let $ \mathcal{C} = \{ f(\bb_1), ..., f(\bb_k) \} \subset V.$ 
+   Then: 
+   \begin{enumerate}
+       \item $ \Cf $ is a spanning set if and only if $ f $ is surjective.
+       \item $ \Cf $ is linearly independent if and only if $ f $ is injective.
+       \item $ \Cf $ is a basis if and only if $ f $ is an isomorphism.
+   \end{enumerate}
+\end{lemma}
+
+\begin{corollary}
+    If $ U \cong V $ then $ \textup{dim } U = \textup{dim } V $.
+\end{corollary}
+
+\begin{corollary}
+    Let $ f : U \to V $ be a linear map, and suppose $ \textup{dim } U = \textup{dim } V $. Then the following are equivalent:
+    \begin{enumerate}
+        \item $ f $ is injective.
+        \item $ f $ is surjective. 
+        \item $ f $ is an isomorphism. 
+    \end{enumerate}
+\end{corollary}
+
+\begin{corollary}
+    If $ f : \R^n \to V $ is an isomorphism, then the set
+    \[ \Cf = \{ f(\eb_1), ..., f(\eb_n)\}\]
+    is a basis for $ V $.
+\end{corollary}
+
+\section{The Rank-Nullity Theorem}
+\begin{definition}
+    Let $ U $ and $ V $ be vector spaces and let $ f : U \to V $ be a linear map. Then
+    \begin{itemize}
+        \item The \textbf{Rank} of $ f $ denoted as $\rank \, f$ is defined as $ \textup{dim } \im f $.
+        \item The \textbf{Nullity} of $ f $ denoted as $\nullity \, f$ is defined as $ \dim \ker f $.
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}[Rank-Nullity theorem]
+    Let $ U $ and $ V $ be vector spaces and let $ f : U \to V $ be a linear map. Then
+    \[ \rank \, f + \nullity \, f = \dim \, U\].
+\end{theorem}
+
+\section{Linear maps and matrices}
+Suppose $ U $ and $ V $ are vector spaces and $ f : U \to V $ is a linear map. We want to associate a matrix with $ f $ as we did before 
+for a linear map between $ \R^n $ and $ \R^k $ In order to do it let 
+\[ \Bf = \{\bb_1, ..., \bb_k\} \subset U \text{ and } \Cf = \{\cb_1, ..., \cb_n\} \subset V\]
+be bases. We have seen in Proposition 12 that this gives us the following isomorphisms
+\[ F_\Bf : \R^k \to U \text{ and } F_\Cf : \R^n \to V\]
+Now by Lemma 20 the following composition of linear maps 
+\[ F_\Cf^{-1} \circ f \circ F_\Bf \]
+is also a linear map. Therefore it must be given by some  matrix $ A \in M_{n \times k} (\R)$ such that
+\[ F_\Cf^{-1} \circ f \circ F_\Bf(\vb) = A \vb\]
+This matrix $ A $ is called the \textbf{matrix representing $ f $ with respect to $ \Bf $ and $ \Cf $}, we denote it as:
+\[ _\Cf[f]_\Bf \text{ or } [f]_{\Bf}^{\Cf}\]
+To compute the matrix $_\Cf[f]_\Bf$ we can use the fact that the product $ A \eb_j $ is given by the $j$th column of $ A $.  
+Therefore the $j$th column of $_\Cf[f]_\Bf$ is the vector
+\[ F_\Cf^{-1} \circ f \circ F_\Bf(\eb_j) = F_\Cf^{-1} \circ f(\bb_j) \in \R^n.\]
+The procedure of finding $_\Cf[f]_\Bf$ is as follows
+\begin{itemize}
+    \item For each $ j = 1, ..., k $, take the $j$th basis vector $ \bb_j \in \Bf $, and apply the map $ f $ to it to get a vector $f(\bb_j) \in V $
+    \item Express each $f(\bb_j) $ as a linear combination of vectors in $\Cf$
+    \[ f(\bb_j) = a_{1j}\cb_1 + a_{2j}\cb_2 + ... + a_{nj}\cb_n \]
+    for some scalars $ a_{1j}, ..., a_{nj} \in \R $.
+
+    Now $F_\Cf$ is a map that takes a vector in $ \R^n $ and returns a linear combination of the elements $\Cf$ (the basis of $V$) where scalar of the $i$th 
+    basis vector of $V$ is the $i$th entry in the vector. Therefore 
+    \begin{align}
+        F_\Cf^{-1}( f(\bb_j)) &= \begin{pmatrix}
+           a_{1j} \\
+           a_{2j} \\
+           \vdots \\
+           a_{nj} 
+        \end{pmatrix},
+    \end{align}
+    so $_\Cf[f]_\Bf$ is the matrix $(a{ij})$.
+\end{itemize}
+
+\begin{definition}
+    Let $ V $ be a vector space, and let $\Bf = \{\bb_1, ..., \bb_k\}$ and $\Cf = \{\cb_1, ..., \cb_n\}$ be two bases for $V$. 
+    The \textbf{change-of-basis matrix} from $\Bf$ to $\Cf$ is the matrix
+    \[_\Cf[\text{id}_V]_\Bf\]
+    That represents the identity map with respect to $ \Bf $ and $ \Cf $.
+\end{definition}
+
+\begin{lemma}
+    Let $ V $ be a vector space, and let $\Bf = \{\bb_1, ..., \bb_k\}$ and $\Cf = \{\cb_1, ..., \cb_n\}$ be two bases for $V$,
+    and let $ P = _\Cf[\text{id}_V]_\Bf $ be the change-of-basis matrix. Pick any $ \xb \in V $. If the coefficients of $\xb$ with respect to $\Bf$ are the vector
+    $\vb \in \R $, then the coefficients of $\xb$ with respect to $\Cf$ are given by the vector 
+    \[P\vb.\]
+\end{lemma}
+
+\begin{proposition}[Change-of-basis formula]
+   Let $ f : U \to V $ be a linear map, Let $ \Bf $ and $ \Bf'$ be two bases for $ U $, and let $ _\Bf P_{\Bf'} $ be the change-of-basis matrix between them. 
+   Also let $ \Cf $ and $ \Cf'$ be two bases for $ V $, and let $ _{\Cf'}P_{\Cf} $ be the change-of-basis matrix between them. Then the matrices representing $ f $ with respect
+   to $\Bf $ and $ \Cf $ or with respect to $ \Bf' $ and $ \Cf' $ are related by 
+   \[ _{\Cf'} [f]_{\Bf'} = \, _{\Cf'}P_\Cf \; _\Cf [f]_\Bf \; _\Bf P_{\Bf'}.\]
+   
+\end{proposition}
 \end{document}

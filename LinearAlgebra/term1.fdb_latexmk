@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1618603730 "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.tex" "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.pdf" "term1" 1618603731
+["pdflatex"] 1618643553 "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.tex" "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.pdf" "term1" 1618643554
   "C:/Users/szymo/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1535460544 4160885 fea1116ceb8a1c560fbbecd7fe814c0f ""
-  "C:/Users/szymo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1618255802 98598 5168e858b4c7d99bb17a48b3c6d0d21e ""
+  "C:/Users/szymo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1618640974 98598 5168e858b4c7d99bb17a48b3c6d0d21e ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233955448 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233955454 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -39,6 +39,7 @@
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1247596667 32587 65067f817f408bc71a7312f3d9828a9b ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
@@ -83,13 +84,13 @@
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/grfext.sty" 1522794645 7075 2fe3d848bba95f139de11ded085e74aa ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty" 1522794647 22417 1d9df1eb66848aa31b18a593099cf45c ""
   "C:/Users/szymo/AppData/Local/Programs/MiKTeX 2.9/tex/latex/tools/verbatim.sty" 1525438740 7474 cf84171354dfa1855684c0946ff000f1 ""
-  "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.aux" 1618603731 1302 7b059da0bc5d0cd5b9561834fcf30de0 ""
-  "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.tex" 1618603730 25841 cc4a6645ecf3b985d15a5434ecd81a3e ""
-  "term1.aux" 1618603731 1302 7b059da0bc5d0cd5b9561834fcf30de0 "pdflatex"
-  "term1.tex" 1618603730 25841 cc4a6645ecf3b985d15a5434ecd81a3e ""
+  "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.aux" 1618643554 1480 d3e59dc0e38d7b98713bcb45f4902529 ""
+  "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.tex" 1618643552 31539 c8204b306c0ee77c82e9ba0002ebf655 ""
+  "term1.aux" 1618643554 1480 d3e59dc0e38d7b98713bcb45f4902529 "pdflatex"
+  "term1.tex" 1618643552 31539 c8204b306c0ee77c82e9ba0002ebf655 ""
   (generated)
-  "term1.aux"
-  "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.pdf"
+  "term1.log"
   "term1.pdf"
   "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.log"
-  "term1.log"
+  "term1.aux"
+  "d:/Synchronizowane z dyskiem/3. Computer Science and Mathematics/Mathematics/notes/Short Latex Written notes/Term 1/LinearAlgebra/term1.pdf"

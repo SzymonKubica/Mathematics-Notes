@@ -723,6 +723,198 @@ The procedure of finding $_\Cf[f]_\Bf$ is as follows
    Also let $ \Cf $ and $ \Cf'$ be two bases for $ V $, and let $ _{\Cf'}P_{\Cf} $ be the change-of-basis matrix between them. Then the matrices representing $ f $ with respect
    to $\Bf $ and $ \Cf $ or with respect to $ \Bf' $ and $ \Cf' $ are related by 
    \[ _{\Cf'} [f]_{\Bf'} = \, _{\Cf'}P_\Cf \; _\Cf [f]_\Bf \; _\Bf P_{\Bf'}.\]
-   
 \end{proposition}
+
+\section{Determinants}
+
+\begin{definition}
+    Let $ A $ be an $ n\times n $-matrix, and $ A_{ji} $ be the submatrix obtained by deleting the $i$-th row and $j$-th column of $ A $. $A_{ij}$ is called the minor of $ A $.
+\end{definition}
+
+\begin{definition}
+    The determinant of an $ n\times n $-matrix $ A = (a_{ij}) $ is given by 
+    \[ \det \, A = \sum_j (-1)^{i + j} \, a_{ij} \det A_{ij} = \sum_i (-1)^{i + j} \, a_{ij} \det A_{ij} \]
+    The first sum is called expansion along the $i$-th row, the second is called expansion along the $j$-th column. 
+\end{definition}
+
+\begin{definition}
+    Let $\sigma \in S_n $ be a permutation. An \textbf{inversion} $(i, j)$ of $\sigma$ is a pair of positive integers $i, j \st i < j \text{, but } \sigma(i) \geq \sigma(j) $.
+    The \textbf{sign} of a permutation is defined to be 
+    \[sgn(\sigma) := \begin{cases}
+        1, \text{ if the number of inversions in } \sigma \text{ is even.} \\
+        -1, \text{ if the number of inversions in } \sigma \text{ is odd.}
+    \end{cases}\]
+\end{definition}
+
+\begin{definition}
+    Let $ A = (a_{ij}) \inMatrixSq{} $. The \textbf{determinant} of $ A $ is the number:
+    \[ \det(A) = \sum_{\sigma \in S_n} sgn(\sigma)a_{1\sigma(1)}a_{2\sigma(2)}...a_{n\sigma(n)}.\]
+\end{definition}
+
+\begin{proposition}
+    Let $ A $ be a square matrix. Then
+    \begin{enumerate}
+        \item If 2 rows of $ A $ are swapped to produce a matrix $ B $, then $ \det \, B = - \det \, A $.
+        \item If one row of $ A $ is multiplied by a scalar $ \lambda $ to produce a matrix $ B $, then $ \det \, B = \lambda \det \, A $.
+        \item If a multiple of one row of $A$ is added to another row to produce a matrix $ B $, then $ \det \, B = \det \, A $.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+    Let $ A $ be a square matrix. Then
+    \begin{enumerate}
+        \item $ \det A = \det A^T $.
+        \item $ \det AB = \det A \, \det B $. 
+    \end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+    An $ n \times n $-matrix $ A $ is invertible if and only if $ \det \, A \neq 0 $.
+\end{proposition}
+
+\section{Eigenvalues and eigenvectors}
+
+\begin{definition}
+    Let $ A $ be a $ n \times n $- matrix, and let $\lambda \in \R $ be a number. We say that $ \lambda $ is an \textbf{eigenvalue} of $ A $ if there exists a non-zero vector
+    $ \vb \in \R^n $ satisfying 
+    \[ A \vb = \lambda \vb\]
+    We call such a $ \vb $ an \textbf{eigenvector} of $ A $ (for the eigenvalue $ \lambda $).
+\end{definition}
+
+\begin{remark}
+    Let $ A  \inMatrixSq $. Obviously, the non-zero vector $ \vb $ is an eigenvector of $ A $ with eigenvalue $ \lambda $ if and only if $ (A - \lambda I_n)\vb = \mathbf{0} $.
+\end{remark}
+
+\begin{proposition}
+    Let $ A \inMatrixSq $. Then $ \lambda $ is an eigenvalue of $ A $ if and only if the matrix $ A - \lambda I_n $ is not invertible.
+\end{proposition}
+
+\begin{definition}
+    Let $ A \inMatrixSq $. The determinant
+    \[ p_A(\lambda) := \det(A - \lambda I_n)\]
+    is called the characteristic polynomial.
+\end{definition}
+
+\section{Diagonalization}
+
+\begin{definition}
+    Let $ A $ and $ B $ be $ n \times n $-matrices. We call $ A $ similar to $ B $ if there exists an invertible matrix $ P \st A = P^{-1}BP$. 
+\end{definition}
+
+\begin{lemma}
+    Let $ A $ and $ B $ be $ n \times n $-matrices. If $A$ is similar to $B$, then $B$ is similar to $A$.
+\end{lemma}
+
+\begin{proposition}
+    Similar matrices have the same eigenvalues.
+\end{proposition}
+
+\begin{definition}
+    A matrix $ A $ is called diagonalizable if it is similar to a diagonal matrix.
+\end{definition}
+
+\begin{lemma}
+    Let $ A \inMatrixSq $. Suppose we can find $n$ eigenvectors $ \vb_1, ...,\vb_n $ of $ A $, with corresponding eigenvalues $\lambda_1, ..., \lambda_n$. Let
+    \[ P := (\vb_1|\vb_2|...|\vb_n),\]
+    i.e. the matrix whose columns are the vectors $ \vb_i $. If $ P $ is invertible, then $ A $ is diagonalizable and the corresponding diagonal matrix is given by 
+    \[ P^{-1}AP = diag(\lambda_1, ..., \lambda_n).\]
+\end{lemma}
+
+\begin{definition}
+    Let $ A \inMatrixSq $. The eigenspace $E_\lambda$ of $ A $ is the set
+    \[ E_\lambda := \{ v \in \R^n | Av = \lambda v\}.\] 
+    Note that this set includes all of the eigenvectors of $ A $ plus the zero vector.
+\end{definition}
+
+\begin{proposition}
+    Any eigenspace $ E_\lambda $ of a matrix $ A \inMatrixSq $ is a subspace of $ \R^n $.
+\end{proposition}
+
+\begin{remark}
+    The proposition above is not surprising as 
+    \[ E_\lambda = \ker(T_{A - \lambda I_n}) = span\{v_1, ..., v_k\},\]
+    where $ v_1, ..., v_k $ are the eigenvectors to the eigenvalue $\lambda$.
+
+\end{remark}
+
+\section{Gram-Schmidt Process and orthogonality}
+
+\begin{definition}
+    A set of vectors $ S = \{\vb_1,...,\vb_n\} \subset \R^n $ is called an orthogonal set if each pair of distinct vectors in the set is orthogonal:
+    \[ v_i \cdot v_j = 0 \; \forall i, j, i\neq j.\]
+    The set $ S $ is called orthonormal if it is orthonormal and all vectors in the set are unit vectors.
+\end{definition}
+
+\begin{proposition}
+    Let $ \{\vb_1,...,\vb_n\} $ be an orthogonal set. Then $\{\vb_1,...,\vb_n\}$ is linearly independent.
+\end{proposition}
+
+\begin{definition}
+    Let $ \{\vb_1,...,\vb_k\} $ be an orthogonal set of vectors in $ \R^n $ and $ U = span\{v_1,...,v_k\}.$ Let $ y \in \R^n $. The orthogonal projection of $ y $ onto $ U $
+    is the vector given by
+    \[ proj_U \; y := \frac{y \cdot v_1}{||v_1||^2}v_1 + \frac{y \cdot v_2}{||v_2||^2}v_2 +...+ \frac{y \cdot v_k}{||v_k||^2}v_k.\]  
+\end{definition}
+
+\begin{theorem}[Gram-Schmidt Process] 
+    Let  $ \{\vb_1,...,\vb_k\} $ be a linearly independent set of vectors in $ \R^n $. Define inductively, $ i \leq k $:
+    \begin{align}
+        w_1 &:= v_1 \\
+        w_2 &:= v_2 - proj_{span\{w_1\}} \; v_2 = v_2 - \frac{v_2 \cdot w_1}{||w_1||^2}w_1\\ 
+        w_3 &:= v_3 - proj_{span\{w_1, w_2\}} \; v_3 = v_3 - \left(\frac{v_3 \cdot w_1}{||w_1||^2}w_1 + \frac{v_3 \cdot w_2}{||w_2||^2}w_2 \right)\\
+        ... \\
+        w_i &:= v_i - proj_{span\{w_1, w_2,..., w_{i -1}\}} \; v_i = v_i - \left(\frac{v_i \cdot w_1}{||w_1||^2}w_1 + \frac{v_i \cdot w_2}{||w_2||^2}w_2 + ... +\frac{v_i \cdot w_{i - 1}}{||w_{i - 1}||^2}w_{i - 1} \right)\\
+    \end{align}
+\end{theorem}
+Then
+\begin{enumerate}
+    \item $ \{w_1,...,w_k\} $ is an orthogonal set.
+    \item Let $ u_i = \frac{w_i}{||w_i||} $. Then $ \{u_1,...,u_k\} $ is an orthonormal set.
+    \item $ span \{w_1,...,w_k\} = span \{u_1,...,u_k\} = span\{v_1,...,v_k\} $.
+\end{enumerate}
+
+\begin{definition}
+    A matrix is called orthogonal if its columns as an orthogonal set. It is called orthonormal if it is orthogonal and the columns are unit vectors.
+\end{definition}
+
+\begin{note} 
+    Since all columns of an orthogonal matrix are orthogonal, they are linearly independent and therefore an orthogonal matrix is always invertible.
+\end{note}
+
+\begin{proposition}
+    A matrix $ A \inMatrixSq $ is orthogonal if and only if $ AA^T = I_n $.
+\end{proposition}
+
+\section{Real symmetric matrices and orthogonality}
+
+\begin{definition}
+    A matrix $ A \inMatrixSq $ is called symmetric if $ A = A^T $.
+\end{definition}
+
+\begin{proposition}
+    Let $ A \inMatrixSq $, $ A $ symmetric. Then $ A $ has at least one real eigenvalue, and all its eigenvectors are real.
+\end{proposition}
+
+\begin{lemma}
+    Let $ A \inMatrixSq $,$ A $ symmetric. Let $ \lambda_1, \lambda_2 $ be distinct eigenvalues of $ A $ with corresponding eigenvectors $ v_1 $ and $ v_2 $. Then $ v_1 $ and $ v_2 $ are orthogonal.
+    \label{orthogonalEigenvectors}
+\end{lemma}
+
+\begin{theorem}
+    Let $ A \inMatrixSq $,$ A $ symmetric. Then $ A $ is diagonalizable, i.e. there exists a diagonal matrix $ D $ and an invertible matrix $ P $ with
+    $ A = PDP^{-1} $ such that the matrix $P$ of eigenvectors is orthogonal. We call such a matrix orthogonally diagonalizable.
+    \label{orthogonallyDiag}
+\end{theorem}
+
+\begin{remark}
+    \begin{enumerate}
+        \item From theorem \ref{orthogonallyDiag} we can deduce that a symmetric matrix always has a basis of real eigenvectors. If all the eigenvalues are distinct, by 
+        Lemma \ref{orthogonalEigenvectors}, we get immediately that the eigenvectors are pairwise orthogonal.
+        \item Not every diagonalizable matrix is orthogonally diagonalizable. That is because the Gram-Schmidt process doesn't preserve eigenvectors in general. 
+        Actually a matrix is orthogonally diagonalizable if and only if it is symmetric.
+    \end{enumerate}
+\end{remark}
+
+\begin{theorem}[Spectral Theorem]
+    A matrix $ A \inMatrixSq $ is orthogonally diagonalizable if and only is it is symmetric.
+\end{theorem}
 \end{document}
